@@ -22,7 +22,7 @@ const Container = styled.div`
 `;
 
 const Header = styled.header`
-  background-image: linear-gradient(-45deg, #d754ab, #fd723a);
+  background-image: linear-gradient(-45deg, #000000, #424242);
   height: 45vh;
   color: white;
   display: flex;
@@ -64,7 +64,7 @@ export default () => {
     <Container>
       <Header>
         <Title>Shooting Corn</Title>
-        <Subtitle>Kang</Subtitle>
+        <Subtitle>-Movie Review-</Subtitle>
       </Header>
       {loading && <Loading>Loading...</Loading>}
       <Movies>

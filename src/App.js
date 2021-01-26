@@ -4,6 +4,7 @@ import Home from "./routes/Home";
 import About from "./routes/About";
 import Detail from "./routes/Detail";
 import Navigation from "./components/Navigation";
+import Timeline from "./routes/Timeline";
 
 
 function App() {
@@ -12,7 +13,8 @@ function App() {
     <Navigation />
     <Route path="/" exact={true} component={Home} />
     <Route path="/about" component={About}/>
-    <Route path="/movie/:id" component={Detail}/>
+    <Route path="/movie/:id" exact={true} component={Detail}/>
+    <Route path="/movie/:id/timeline" component={Timeline}/>
   </HashRouter>
   );
 }

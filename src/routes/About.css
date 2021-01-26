@@ -11,11 +11,12 @@
     font-weight: 300;
   }
   
-  .about__container span:first-child {
-    font-size: 20px;
+  .title__guideline {
+    color: red;
+    font-weight: bold;
   }
   
-  .about__container span:last-child {
+  .about__container span {
     display: block;
     margin-top: 10px;
   }

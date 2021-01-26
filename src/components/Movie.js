@@ -33,7 +33,7 @@ export default ({ id, bg, isLiked }) => {
   });
   return (
     <Container>
-      <Link to={`/${id}`}>
+      <Link to={`/movie/${id}`}>
         <Poster bg={bg} />
       </Link>
       <button onClick={toggleMovie}>{isLiked ? "Unlike" : "Like"}</button>
