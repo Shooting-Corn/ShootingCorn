@@ -8,7 +8,7 @@ const GET_MOVIES = gql`
   {
     movies {
       id
-      medium_cover_image
+      poster
       isLiked @client
     }
   }
@@ -73,7 +73,7 @@ export default () => {
             key={m.id}
             id={m.id}
             isLiked={m.isLiked}
-            bg={m.medium_cover_image}
+            bg={m.poster}
           />
         ))}
       </Movies>

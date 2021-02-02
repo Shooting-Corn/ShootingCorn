@@ -6,19 +6,22 @@ import styled from "styled-components";
 import Timeline from "./Timeline.js";
 
 const GET_MOVIE = gql`
-  query getMovie($id: Int!) {
+  query getMovie($id: String!) {
     movie(id: $id) {
       id
       title
-      medium_cover_image
-      language
-      year
-      rating
-      nudity
+      directors
+      stars
+      genres
+      runtime
+      grade 
+      synopsis
+      violence_per
       violence
-      profanity
-      alcohol_smoking
-      summary
+      nudity
+      word
+      alcohol
+      poster
       isLiked @client
     }
   }
@@ -90,7 +93,7 @@ const Alcohol_Smoking = styled.h4`
 export default () => {
   const { id } = useParams();
   const { loading, data } = useQuery(GET_MOVIE, {
-    variables: { id: parseInt(id) }
+    variables: { id: id }
   });
 
   const [modalVisible, setModalVisible] = useState(false)
@@ -110,12 +113,12 @@ export default () => {
             : `${data.movie.title} ${data.movie.isLiked ? "💖" : " "}`}
         </Title>
         <Subtitle>
-          {data?.movie?.year} · {data?.movie?.rating}
+          {data?.movie?.directors} · {data?.movie?.runtime}
         </Subtitle>
         <Nudity>Nudity: level {data?.movie?.nudity}</Nudity>
         <Violence>Violence: level {data?.movie?.violence}</Violence>
-        <Profanity>Profanity: {data?.movie?.profanity}</Profanity>
-        <Alcohol_Smoking>Alcohol &amp; Smoking: {data?.movie?.alcohol_smoking}</Alcohol_Smoking>
+        <Profanity>Profanity: {data?.movie?.word}</Profanity>
+        <Alcohol_Smoking>Alcohol &amp; Smoking: {data?.movie?.alcohol}</Alcohol_Smoking>
         <button onClick={openModal}>Specific Timeline &gt;</button>
         {
         modalVisible && <Timeline
@@ -124,9 +127,9 @@ export default () => {
           maskClosable={true}
           onClose={closeModal}></Timeline>
         }
-        <Description>{data?.movie?.summary}</Description>
+        <Description>{data?.movie?.synopsis}</Description>
       </Column>
-      <Poster bg={data?.movie?.medium_cover_image}></Poster>
+      <Poster bg={data?.movie?.poster}></Poster>
     </Container>
   );
 };
