@@ -121,7 +121,8 @@ export default () => {
         <Alcohol_Smoking>Alcohol &amp; Smoking: {data?.movie?.alcohol}</Alcohol_Smoking>
         <button onClick={openModal}>Specific Timeline &gt;</button>
         {
-        modalVisible && <Timeline
+          modalVisible && <Timeline
+          id={data.movie.id}
           visible={modalVisible}
           closable={true}
           maskClosable={true}

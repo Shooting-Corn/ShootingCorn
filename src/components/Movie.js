@@ -29,7 +29,7 @@ const Poster = styled.div`
 
 export default ({ id, bg, isLiked }) => {
   const [toggleMovie] = useMutation(LIKE_MOVIE, {
-    variables: { id: parseInt(id), isLiked }
+    variables: { id: id, isLiked }
   });
   return (
     <Container>

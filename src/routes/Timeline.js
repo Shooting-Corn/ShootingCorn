@@ -1,6 +1,20 @@
 import React, {useEffect} from "react";
 import styled from "styled-components";
 import Portal from "./Portal";
+import { gql } from "apollo-boost";
+import { useQuery } from "@apollo/react-hooks";
+import Line from "../components/Line";
+
+const GET_TIMELINE = gql`
+  query getTimeline($id: String!) {
+    timeline(id: $id) {
+      idx
+      Kiss_scene
+      Clown 
+      Gun
+    }
+  }
+`;
 
 const ModalOverlay = styled.div`
   box-sizing: content-box;
@@ -45,52 +59,62 @@ const Lines = styled.img`
   margin-top: 10px;
 `;
 
-export default({
+const Timeline = ({
+    id,
     className,
     onClose,
     maskClosable,
     closable,
     visible,
-    children,
+    children
   }) => {
+    const {timelines} = useQuery(GET_TIMELINE, {
+      variables: {id: id}
+    });
     const onMaskClick = (e) => {
         if (e.target === e.currentTarget) {
           onClose(e)
         }
-      };
+    };
     
-      const close = (e) => {
-        if (onClose) {
-          onClose(e)
-        }
-      };
+    const close = (e) => {
+      if (onClose) {
+        onClose(e)
+      }
+    };
     
-      useEffect(() => {
-        document.body.style.cssText = `position: fixed; top: -${window.scrollY}px`
-        return () => {
-          const scrollY = document.body.style.top
-          document.body.style.cssText = `position: ""; top: "";`
-          window.scrollTo(0, parseInt(scrollY || '0') * -1)
-        }
-      }, []);
+    useEffect(() => {
+      document.body.style.cssText = `position: fixed; top: -${window.scrollY}px`
+      return () => {
+        const scrollY = document.body.style.top
+        document.body.style.cssText = `position: ""; top: "";`
+        window.scrollTo(0, parseInt(scrollY || '0') * -1)
+      }
+    }, []);
 
     return (
-        <Portal elementId="modal-root">
+      <Portal elementId="modal-root">
       <ModalOverlay visible={visible} />
       <ModalWrapper
         className={className}
         onClick={maskClosable ? onMaskClick : null}
         tabIndex={-1}
-        visible={visible}
-      >
+        visible={visible}>
         <ModalInner tabIndex={0} className="modal-inner">
           {closable && <button className="modal-close" onClick={close}>close</button>}
           <br/>
           <br/>
           {children}
+          {timelines?.timeline?.map(m => (
+            <Line
+              time={m.idx}
+              isLine={m.Kiss_scene}
+            />
+          ))}
           <Lines src={process.env.PUBLIC_URL + '/img/image.png'}></Lines>
         </ModalInner>
       </ModalWrapper>
     </Portal>
-    )
+    );
 };
+export default Timeline;
