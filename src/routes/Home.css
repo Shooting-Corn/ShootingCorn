@@ -1,30 +1,67 @@
 .container {
-    height: 100%;
-    display: flex;
-    justify-content: center;
-  }
+
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 0px;
+
+  align-items: center;
   
-  .loader {
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-weight: 300;
-  }
+}
+
+
+
+
+/* Style the video: 100% width and height to cover the entire window */
+.Video {
+width: 100vh;
+height: 100vh;
+margin: 0px;
+padding:0px;
+background-repeat: repeat;
+background-size: cover;
+justify-content: center;
+z-index:1;
+}
+
+
+.loader {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 300;
+}
+
+
+
+.footer{
+top: 500px;
+background-image: "./img/sookmyung.png";
+display:float;
+
+}
+
+.movies {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 25px;
+  width: 65%;
+  position: absolute;
   
+
+  
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (max-width: 1090px) {
   .movies {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(400px, 1fr));
-    grid-gap: 100px;
-    padding: 50px;
-    width: 80%;
-    padding-top: 70px;
+    grid-template-columns: 1fr;
+    width: 100%;
+    align-items: center;
   }
-  
-  @media screen and (max-width: 1090px) {
-    .movies {
-      grid-template-columns: 1fr;
-      width: 100%;
-    }
-  }
+}

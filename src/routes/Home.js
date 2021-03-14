@@ -3,6 +3,7 @@ import { gql } from "apollo-boost";
 import { useQuery } from "@apollo/react-hooks";
 import styled from "styled-components";
 import Movie from "../components/Movie";
+import "./Home.css"
 
 const GET_MOVIES = gql`
   {
@@ -16,13 +17,16 @@ const GET_MOVIES = gql`
 
 const Container = styled.div`
   display: flex;
-  flex-direction: column;
+  justify-content: center;  
   align-items: center;
+  margin:0px;
+  flex-direction: column;
   width: 100%;
+  height:100%;
 `;
 
 const Header = styled.header`
-  background-image: linear-gradient(-45deg, #000000, #424242);
+
   height: 45vh;
   color: white;
   display: flex;
@@ -33,13 +37,23 @@ const Header = styled.header`
 `;
 
 const Title = styled.h1`
-  font-size: 60px;
+  font-size: 65px;
   font-weight: 600;
   margin-bottom: 20px;
+  color:black;
+  position:absolute;
+  top:290px;
+  background-color:yellow;
+  
 `;
 
 const Subtitle = styled.h3`
   font-size: 35px;
+  color:black;
+  color:white;
+  position:absolute;
+  top:-300px;
+  z-index:2;
 `;
 
 const Loading = styled.div`
@@ -51,11 +65,16 @@ const Loading = styled.div`
 
 const Movies = styled.div`
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   grid-gap: 25px;
-  width: 65%;
-  position: relative;
-  top: -50px;
+  width: 80%;
+  top: 500px;
+  position: absolute;
+  left: 150px;
+  align-items: center;
+  justify-content: center;
+
+  
 `;
 
 export default () => {
@@ -63,7 +82,7 @@ export default () => {
   return (
     <Container>
       <Header>
-        <Title>Shooting Corn</Title>
+        <Title>CORN'S LISTS</Title>
         <Subtitle>-Movie Review-</Subtitle>
       </Header>
       {loading && <Loading>Loading...</Loading>}

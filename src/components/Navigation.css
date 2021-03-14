@@ -1,35 +1,93 @@
-.nav {
-    z-index: 1;
-    position: fixed;
-    top: 50px;
-    left: 10px;
-    display: flex;
-    flex-direction: column;
-    background-color: #FFBF00;
-    padding: 10px 20px;
+/*    padding: 10px 20px;
     box-shadow: 0 13px 27px -5px rgba(50, 50, 93, 0.25),
       0 8px 16px -8px rgba(0, 0, 0, 0.3), 0 -6px 16px -6px rgba(0, 0, 0, 0.025);
     border-radius: 5px;
-  }
+  */
+
+
+
+
+
+
+  .nav {
+    z-index: 1;
+    position: fixed;
+    top: 0px;
+    
+    left:0px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    
+    background-color: white;
+    
   
-  @media screen and (max-width: 1090px) {
+
+  }
+
+
+
+  .img{
+    top: 0px;
+    padding-left:110px;
+    width:6%;
+    height:6%;
+    
+    
+    
+  }
+
+  /*animation: rotate_image 10s linear infinite;*/
+
+
+  @keyframes rotate_image{
+    from {
+        transform: rotate(0deg);
+      }
+    to {
+        transform: rotate(360deg);
+      }
+  }
+
+
+
+.Logo{
+  position:absolute;
+  top: 40px;
+  left: 50px;
+
+}
+
+
+
+
+
+/*vw*/
+
+  /*@media screen and (max-width: 1090px) {*/
+  @media screen and (max-width: 100%) {
     .nav {
       left: initial;
       top: initial;
       bottom: 0px;
-      width: 100%;
+
     }
   }
-  
+
   .nav a {
     text-decoration: none;
-    color: #000000;
+    float:center;
+    color:rgb(8, 8, 8);
     text-transform: uppercase;
-    font-size: 12px;
+    font-size: 16px;
     text-align: center;
     font-weight: 600;
+    padding-left:150px;
+    padding-top:30px;
+    padding-bottom:30px;
   }
   
-  .nav a:not(:last-child) {
-    margin-bottom: 20px;
+  .nav a:last-child {
+    padding-right:100px;
   }

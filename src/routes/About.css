@@ -1,22 +1,89 @@
-.about__container {
+
+  .background {
+    background-image: url('./img/popcorn.jpg');
+    
+  }
+
+  
+
+
+
+
+
+
+  .text__container {
+
+    padding: 20px;
+    border-radius: 5px;
+    background-color: white;
+    margin: 0 auto;
+    margin-top: 170px;
+    width: 100%;
+    max-width: 1000px;
+    font-weight: 350;
+    font-size: 12pt;
+    line-height: 27px;
+    
+  }
+
+
+  .text__container2 {
+
+    padding: 20px;
+    border-radius: 5px;
+    background-color: white;
+    margin: 0 auto;
+    margin-top: 50px;
+    margin-bottom: 80px;
+    width: 100%;
+    max-width: 1000px;
+    font-weight: 350;
+    font-size: 12pt;
+    line-height: 27px;
+    
+  }
+
+
+
+  .about__container {
     box-shadow: 0 13px 27px -5px rgba(50, 50, 93, 0.25),
       0 8px 16px -8px rgba(0, 0, 0, 0.3), 0 -6px 16px -6px rgba(0, 0, 0, 0.025);
     padding: 20px;
     border-radius: 5px;
     background-color: white;
     margin: 0 auto;
-    margin-top: 100px;
+    margin-top: 10px;
+    margin-bottom: 40px;
     width: 100%;
     max-width: 400px;
     font-weight: 300;
   }
-  
+
+
+
+  .text__guideline {
+    color: red;
+    font-weight: bold;
+    font-size:16pt;
+    line-height: 50px;
+  }
+
+
+
+
   .title__guideline {
     color: red;
     font-weight: bold;
   }
   
+
+
+
+
   .about__container span {
     display: block;
     margin-top: 10px;
   }
+
+
+
