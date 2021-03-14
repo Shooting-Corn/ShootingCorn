@@ -10,8 +10,8 @@ const GET_TIMELINE = gql`
     timelines(id: $id) {
       idx
       Kiss_scene
-      clown 
-      blood
+      Gun
+      Clown 
     }
   }
 `;
@@ -184,25 +184,25 @@ const Timeline = ({
             ))}
           </ClassWrapper>
           <ClassWrapper>
-            <ClassInner>Clown</ClassInner>
+            <ClassInner>Gun</ClassInner>
             {data?.timelines?.map(t => (
               <Line
                 key = {t.idx}
                 time={t.idx}
-                isLine={t.clown}
-                frame={frame}
+                isLine={t.Gun}
                 setFrame={setFrame}
                 checkFrame={checkFrame}
                 />
             ))}
           </ClassWrapper>
           <ClassWrapper>
-            <ClassInner>Blood</ClassInner>
+            <ClassInner>Clown</ClassInner>
             {data?.timelines?.map(t => (
               <Line
                 key = {t.idx}
                 time={t.idx}
-                isLine={t.blood}
+                isLine={t.Clown}
+                frame={frame}
                 setFrame={setFrame}
                 checkFrame={checkFrame}
                 />
