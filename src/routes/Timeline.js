@@ -97,11 +97,12 @@ const ClassWrapper = styled.div`
   margin: 7px 0px 7px 0px;
   padding: 5px;
   display:flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
+  overflow: auto;
 `;
 
 const ClassInner = styled.div`
-  flex:0.8;
+  width: 50px;
   padding: 15px 2px 2px 2px;
   margin: 5px;
 `;
@@ -184,7 +185,7 @@ const Timeline = ({
             ))}
           </ClassWrapper>
           <ClassWrapper>
-            <ClassInner>Gun</ClassInner>
+            <ClassInner>Gun&nbsp;&nbsp;&nbsp;</ClassInner>
             {data?.timelines?.map(t => (
               <Line
                 key = {t.idx}

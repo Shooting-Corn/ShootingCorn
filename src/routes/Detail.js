@@ -13,7 +13,7 @@ const GET_MOVIE = gql`
       title
       directors
       stars
-      genres
+      genre
       runtime
       grade 
       synopsis
@@ -157,7 +157,7 @@ export default () => {
       <Column>
         
         <Subtitle className="Subtitle">
-        {data?.movie?.grade}·{data?.movie?.genres}· {data?.movie?.directors} · {data?.movie?.runtime}min· {data?.movie?.stars}
+        {data?.movie?.grade}·{data?.movie?.genre}· {data?.movie?.directors} · {data?.movie?.runtime}min· {data?.movie?.stars}
         </Subtitle>
         <Description>{data?.movie?.synopsis}</Description>
         <Nudity>Nudity: level {data?.movie?.nudity}</Nudity>
