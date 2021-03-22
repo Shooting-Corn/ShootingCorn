@@ -39,9 +39,12 @@
     text-align: center;
     padding: 10px;
   }
-.SubContent p {
-    color: black;
+.SubContent h1 {
+    color: red;
     font-size: 1.3rem;
+    background-color: white;
+    padding:15px;
+
 }
 .SubContent button {
     font-weight: bold;
@@ -49,12 +52,12 @@
     color: black;
     border: black 1px solid;
     padding: 10px 5px;
-    background-color: hsla(0, 0%, 0%, 0);
+    background-color:yellow;
     font-size: 1.25rem;
     border-radius: 5px;
 }
 .SubContent button:hover {
-    background-color: yellow;
+    background-color: white;
     color: #000000c0;
 }
 

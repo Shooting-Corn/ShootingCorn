@@ -10,7 +10,7 @@ import styled, { css } from "styled-components";
 const Container = styled.div`
     display: flex;
     flex-direction: column;
-    width: 0.7px;
+    width: 0.3px;
     max-width:26px;
     height: 100px;
 `;
@@ -18,7 +18,7 @@ const Container = styled.div`
 
 const Frame = styled.div`
     height:60px;
-    width: 1.3px;
+    width: 0.7px;
     background-color: ${props => props.color};
     ${props => 
         props.line_class === "yolo" && 
@@ -41,7 +41,7 @@ const Time = styled.span`
 const Line = ({time, isLine, setFrame, checkFrame}) => {
     const line_color = (isLine !== '' & isLine !== null) ? "red":"#E6E6E6"
     const line_class = (isLine !== '' & isLine !== null)  ? "yolo":"none"
-    const real_time = time*5
+    const real_time = time*1
     const real_min = parseInt(real_time/60)
     const real_sec = pad(real_time%60)
 

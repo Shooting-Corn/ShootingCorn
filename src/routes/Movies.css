@@ -1,52 +1,52 @@
 .container {
-    background-image: url(./img/popcorn.jfif);  
-    background-repeat: repeat; 
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    
-  }
+  background-image: url(./img/popcorn.jfif);  
+  background-repeat: repeat; 
+  height: 100%;
+  display: flex;
+  justify-content: center;
   
-  .loader {
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-weight: 300;
-  }
-  
-  .movies {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(400px, 1fr));
-    grid-gap: 100px;
-    padding: 50px;
-    width: 80%;
-    padding-top: 70px;
-  }
-  
-  .button {
-    font-weight: bold;
-    margin-top: 5px;
-    color: #f1f1f1;
-    border: #f1f1f1 1px solid;
-    padding: 2px 1px;
-    background-color: hsla(0, 0%, 0%, 0);
-    font-size: 1.25rem;
-    border-radius: 5px;
-    font-family: "NotoSans-Regular";  
+}
+
+.loader {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 300;
+}
+
+.movies {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(400px, 1fr));
+  grid-gap: 100px;
+  padding: 50px;
+  width: 80%;
+  padding-top: 70px;
+}
+
+.button {
+  font-weight: bold;
+  margin-top: 5px;
+  color: #f1f1f1;
+  border: #f1f1f1 1px solid;
+  padding: 2px 1px;
+  background-color: hsla(0, 0%, 0%, 0);
+  font-size: 1.25rem;
+  border-radius: 5px;
+  font-family: "NotoSans-Regular";  
 }
 .button:hover {
-    background-color: #f1f1f1;
-    color: #000000c0;
+  background-color: #f1f1f1;
+  color: #000000c0;
 }
 
 
 
 
-  @media screen and (max-width: 1090px) {
-    .movies {
-      grid-template-columns: 1fr;
-      width: 100%;
-    }
+@media screen and (max-width: 1090px) {
+  .movies {
+    grid-template-columns: 1fr;
+    width: 100%;
   }
+}

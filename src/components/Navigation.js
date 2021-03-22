@@ -24,9 +24,10 @@ function Navigation() {
     
 
     return (
+    <div>
+
 
         <div className="nav">
-
             <Link to="/">&#60; Movies</Link>
             <Link to="/about">About</Link>
             <img className="img"
@@ -34,10 +35,33 @@ function Navigation() {
                         alt="profile" />
             <Link to="/Home2">Home</Link>
             <Link to="/Home2">Join us</Link>
-            
-
-
         </div>
+
+
+        <div>
+            <p className="grade_title">Quick grade guide</p>
+            <div className="grade">
+            <p>violent1 : bleeding </p>
+            <p>violent2 : physical fighting </p>
+            <p>violent3 : kill, gore </p>
+            
+            <p>nudity1 : kiss </p>
+            <p>nudity2 : nudity </p>
+            <p>nudity3 : sex scene </p>
+            </div>
+            <Link to="/Home2">Detail</Link>
+            
+        </div>
+
+
+        
+        <div className="copyright">
+            <p>copyright ©shootingcorn All rights reserve. </p>
+        </div>
+        
+
+
+    </div>
 
 
     );
