@@ -1,7 +1,7 @@
 import ApolloClient from "apollo-boost"; 
 
 const client = new ApolloClient({
-    uri: "http://localhost:4000/",
+    uri: "http://3.34.127.111:4000/",
     resolvers: {
       Movie: {
         isLiked: () => false
